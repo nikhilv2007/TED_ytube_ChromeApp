@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html data-ng-app='myApp' data-ng-csp>
+  <head>
+  	<title>TED</title>
+  </head>
+  <body data-ng-controller='MainCtrl'>
+    
+    <button data-ng-click="getAngular()">Get talks</button><br />
+    <webview width="400" height="315" src="http://www.youtube.com/embed/XGSy3_Czz8k?rel=0" autosize="on" frameborder="0" allowfullscreen></webview>
+    
+    <ul data-ng-repeat="talk in talks">
+      <li data-tedTitle={{talk.talk.name}} data-ng-click="getVideoId(talk.talk.name)">{{talk.talk.name}}</li>
+    </ul>
+         
+     <!--webview  width="420" height="345" src="http://www.youtube.com/embed/XGSy3_Czz8k"></webview-->
+
+    <script src="JS/lib/angular.min.js"></script>
+    <script src="JS/app.js"></script>
+  </body>
+</html>
